@@ -1,0 +1,98 @@
+@import "./fonts.css";
+
+:root {
+  --Black: #07123a;
+  --White: #fff;
+  --Grey100: #82869d;
+  --Grey150: #696f89;
+  --Grey200: #6a6d81;
+  --Yellow100: #ffb70f;
+  --Yellow200: #e09d00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Gilroy;
+  background: #20294e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.25em;
+}
+
+.Checkbox {
+  color: var(--White);
+  padding-left: 2.4em;
+}
+
+.Checkbox:has(.Checkbox__Input:checked:not(:disabled)) {
+  font-weight: 600;
+}
+
+.Checkbox__Box {
+  transition: background-color 0.3s ease-in;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background-color: var(--Black);
+  border: 2px solid var(--Grey100);
+  border-radius: 8px;
+  margin-left: -2.4em;
+}
+
+.Checkbox__Input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Checkbox__Input:focus + .Checkbox__Box {
+  box-shadow: 0 0 10px 2px var(--Grey100);
+}
+
+.Checkbox__Input:checked + .Checkbox__Box {
+  background-color: var(--Yellow100);
+  background-image: url(images/on.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: unset;
+}
+
+.Checkbox__Input:checked:not(:disabled) + .Checkbox__Box {
+  font-weight: 600;
+}
+
+.Checkbox__Input:disabled + .Checkbox__Box {
+  opacity: 0.5;
+}
+
+.Checkbox__Input:hover:not(:disabled):not(:checked) + .Checkbox__Box {
+  border-color: var(--Yellow200);
+  transition-property: border-color;
+}
