@@ -1,2 +1,2 @@
-# Checbox
+# Checkbox
 Created with CodeSandbox
