@@ -1,2 +1,2 @@
 # Checkbox
-Created with CodeSandbox
+Special designed simple accessible checkbox Created with CodeSandbox
